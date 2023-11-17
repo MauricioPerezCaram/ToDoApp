@@ -7,6 +7,7 @@ function App() {
     <div className="app">
       <Title />
       <ToDoApp />
+      <h6>MPC</h6>
     </div>
   );
 }

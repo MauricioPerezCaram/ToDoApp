@@ -2,7 +2,7 @@ import { useState } from "react";
 import Todo from "./todo";
 
 const ToDoApp = () => {
-  const [title, setTitle] = useState("Hola");
+  const [title, setTitle] = useState("");
   const [todos, setTodos] = useState([]);
 
   // Ir viendo lo que escribo
@@ -46,7 +46,7 @@ const ToDoApp = () => {
         <input
           onClick={handleSubmit}
           type="submit"
-          value={"Create To Do"}
+          value={"Agregar tarea"}
           className="buttonCreate"
         />
       </form>

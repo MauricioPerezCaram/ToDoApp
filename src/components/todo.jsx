@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Todo({ item, onUpdate }) {
+export default function Todo({ item, onUpdate, onDelete }) {
   const [isEdit, setIsEdit] = useState(false);
 
   function FormEdit() {
@@ -19,7 +19,7 @@ export default function Todo({ item, onUpdate }) {
     }
 
     return (
-      <form className="todoactualizarform" onSubmit={handleSubmit}>
+      <form className="todoUpdateForm" onSubmit={handleSubmit}>
         <input
           type="text"
           className="todoInput"
@@ -36,8 +36,13 @@ export default function Todo({ item, onUpdate }) {
   function TodoElement() {
     return (
       <div className="todoInfo">
-        {item.title} <button onClick={() => setIsEdit(true)}>Editar</button>
-        <button>Eliminar</button>
+        <span className="todoTitle">{item.title}</span>
+        <button className="button" onClick={() => setIsEdit(true)}>
+          Editar
+        </button>
+        <button className="buttonEliminar" onClick={(e) => onDelete(item.id)}>
+          Eliminar
+        </button>
       </div>
     );
   }

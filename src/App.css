@@ -1,5 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:ital,wght@0,300;1,300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.tituloppal {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.todocontainer {
+  width: 500px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.todoCreateForm {
+  display: flex;
+  gap: 5px;
+}
+
+.todoInput {
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: solid 1px #999;
+}
+
+.buttonCreate {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(26, 76, 169);
+  color: white;
+  padding: 10px 20px;
+}
+
+.todosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.todo {
+  padding: 5px;
+  background-color: white;
+}
+
+.todoTitle {
+  flex: 1;
+  font-size: 20px;
+}
+
+.todoUpdateForm,
+.todoInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(72, 122, 211);
+  color: white;
+  padding: 10px 20px;
+}
+
+.buttonEliminar {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(169, 26, 26);
+  color: white;
+  padding: 10px 20px;
 }

@@ -24,6 +24,13 @@ const ToDoApp = () => {
     setTodos(temp);
   }
 
+  function handleUpdate(id, value) {
+    const temp = [...todos];
+    const item = temp.find((item) => item.id === id);
+    item.title = value;
+    setTodos(temp);
+  }
+
   return (
     <div className="todoContainer">
       <form className="todoCreateForm" onSubmit={handleSubmit}>
@@ -38,7 +45,7 @@ const ToDoApp = () => {
 
       <div className="todosContainer">
         {todos.map((item) => (
-          <Todo key={item.id} item={item} />
+          <Todo key={item.id} item={item} onUpdate={handleUpdate} />
         ))}
       </div>
     </div>

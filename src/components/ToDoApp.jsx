@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Todo from "./todo";
 
 const ToDoApp = () => {
   const [title, setTitle] = useState("Hola");
@@ -37,7 +38,7 @@ const ToDoApp = () => {
 
       <div className="todosContainer">
         {todos.map((item) => (
-          <div key={item.id}>{item.title}</div>
+          <Todo key={item.id} item={item} />
         ))}
       </div>
     </div>

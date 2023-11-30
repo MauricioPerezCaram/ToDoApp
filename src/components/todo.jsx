@@ -37,23 +37,24 @@ export default function Todo({ item, onUpdate, onDelete }) {
 
   function TodoElement() {
     return (
-      <div className={`todoInfo ${item.completed ? 'completed' : ''}`}>
+      <div className="todoInfo">
         <span
           className={`todoTitle ${item.completed ? 'completed' : ''}`}
           onClick={() => onUpdate(item.id, item.title, !item.completed)}
         >
           {item.title}
         </span>
-        <button className="button" onClick={() => setIsEdit(true)}>
-          Editar
-        </button>
-        <button className="button" onClick={() => onUpdate(item.id, item.title, !item.completed)}>
-          Tachar
-        </button>
-        <button className="buttonEliminar" onClick={(e) => onDelete(item.id)}>
-          Eliminar
-        </button>
-
+        <div className="buttonContainer">
+          <button className="button" onClick={() => setIsEdit(true)}>
+            Editar
+          </button>
+          <button className="button" onClick={() => onUpdate(item.id, item.title, !item.completed)}>
+            Tachar
+          </button>
+          <button className="buttonEliminar" onClick={(e) => onDelete(item.id)}>
+            Eliminar
+          </button>
+        </div>
       </div>
     );
   }

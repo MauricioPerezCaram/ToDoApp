@@ -94,3 +94,23 @@ body {
 .completed {
   text-decoration: line-through;
 }
+
+.buttonContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.buttonContainer .button {
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.button {
+  background-color: rgb(72, 122, 211);
+  color: white;
+}
+
+.buttonEliminar {
+  background-color: rgb(169, 26, 26);
+}

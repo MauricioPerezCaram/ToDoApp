@@ -5,7 +5,6 @@ const ToDoApp = () => {
   const [title, setTitle] = useState("");
   const [todos, setTodos] = useState([]);
 
-  // Ir viendo lo que escribo
   function handleChange(e) {
     const value = e.target.value;
     setTitle(value);
@@ -26,16 +25,17 @@ const ToDoApp = () => {
     setTitle("");
   }
 
-  // funcion para actualizar los todos
-  function handleUpdate(id, value) {
+  function handleUpdate(id, value, completed) {
     const temp = [...todos];
     const item = temp.find((item) => item.id === id);
     item.title = value;
+    item.completed = completed;
+    console.log('Updated Todo:', item);
     setTodos(temp);
   }
 
   function handleDelete(id) {
-    const temp = todos.filter((item) => item.id != id);
+    const temp = todos.filter((item) => item.id !== id);
     setTodos(temp);
   }
 

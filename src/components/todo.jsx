@@ -1,9 +1,11 @@
 import { useState } from "react";
+
 export default function Todo({ item, onUpdate, onDelete }) {
   const [isEdit, setIsEdit] = useState(false);
 
   function FormEdit() {
     const [newValue, setNewValue] = useState(item.title);
+
     function handleSubmit(e) {
       e.preventDefault();
     }
@@ -35,17 +37,27 @@ export default function Todo({ item, onUpdate, onDelete }) {
 
   function TodoElement() {
     return (
-      <div className="todoInfo">
-        <span className="todoTitle">{item.title}</span>
+      <div className={`todoInfo ${item.completed ? 'completed' : ''}`}>
+        <span
+          className={`todoTitle ${item.completed ? 'completed' : ''}`}
+          onClick={() => onUpdate(item.id, item.title, !item.completed)}
+        >
+          {item.title}
+        </span>
         <button className="button" onClick={() => setIsEdit(true)}>
           Editar
+        </button>
+        <button className="button" onClick={() => onUpdate(item.id, item.title, !item.completed)}>
+          Tachar
         </button>
         <button className="buttonEliminar" onClick={(e) => onDelete(item.id)}>
           Eliminar
         </button>
+
       </div>
     );
   }
+  
 
   return <div className="todo">{isEdit ? <FormEdit /> : <TodoElement />}</div>;
 }

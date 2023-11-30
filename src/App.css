@@ -14,13 +14,13 @@ body {
 
 .tituloppal {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px 0px 20px 0px;
   font-size: 40px;
 }
 
 .todocontainer {
   width: 500px;
-  margin: 100px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
 }
@@ -84,4 +84,13 @@ body {
   background-color: rgb(169, 26, 26);
   color: white;
   padding: 10px 20px;
+}
+
+.titulosecundario{
+  text-align: center;
+  font-size: 20px;
+}
+
+.completed {
+  text-decoration: line-through;
 }

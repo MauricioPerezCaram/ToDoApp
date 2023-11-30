@@ -7,7 +7,12 @@
 }
 
 body {
-  background-color: #efefef;
+  background: rgb(109, 150, 160);
+  background: linear-gradient(
+    90deg,
+    hsla(192, 80%, 51%, 1) 0%,
+    rgb(221, 167, 171) 100%
+  );
   font-family: "Inter", sans-serif;
   font-family: "Roboto", sans-serif;
 }
@@ -19,7 +24,7 @@ body {
 }
 
 .todocontainer {
-  width: 500px;
+  width: 40%;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
@@ -86,7 +91,7 @@ body {
   padding: 10px 20px;
 }
 
-.titulosecundario{
+.titulosecundario {
   text-align: center;
   font-size: 20px;
 }

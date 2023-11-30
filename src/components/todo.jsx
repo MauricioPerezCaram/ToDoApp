@@ -39,7 +39,7 @@ export default function Todo({ item, onUpdate, onDelete }) {
     return (
       <div className="todoInfo">
         <span
-          className={`todoTitle ${item.completed ? 'completed' : ''}`}
+          className={`todoTitle ${item.completed ? "completed" : ""}`}
           onClick={() => onUpdate(item.id, item.title, !item.completed)}
         >
           {item.title}
@@ -48,7 +48,10 @@ export default function Todo({ item, onUpdate, onDelete }) {
           <button className="button" onClick={() => setIsEdit(true)}>
             Editar
           </button>
-          <button className="button" onClick={() => onUpdate(item.id, item.title, !item.completed)}>
+          <button
+            className="button"
+            onClick={() => onUpdate(item.id, item.title, !item.completed)}
+          >
             Tachar
           </button>
           <button className="buttonEliminar" onClick={(e) => onDelete(item.id)}>
@@ -58,7 +61,6 @@ export default function Todo({ item, onUpdate, onDelete }) {
       </div>
     );
   }
-  
 
   return <div className="todo">{isEdit ? <FormEdit /> : <TodoElement />}</div>;
 }

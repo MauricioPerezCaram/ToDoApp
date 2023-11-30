@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Todo from "./todo";
+
+const listaInicial = JSON.parse(localStorage.getItem("lista")) || [];
 
 const ToDoApp = () => {
   const [title, setTitle] = useState("");
-  const [todos, setTodos] = useState([]);
+  // Ajuste en la inicialización de "todos"
+  const [todos, setTodos] = useState(listaInicial);
 
   function handleChange(e) {
     const value = e.target.value;
@@ -30,7 +33,7 @@ const ToDoApp = () => {
     const item = temp.find((item) => item.id === id);
     item.title = value;
     item.completed = completed;
-    console.log('Updated Todo:', item);
+    console.log("Updated Todo:", item);
     setTodos(temp);
   }
 
@@ -38,6 +41,10 @@ const ToDoApp = () => {
     const temp = todos.filter((item) => item.id !== id);
     setTodos(temp);
   }
+
+  useEffect(() => {
+    localStorage.setItem("lista", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div className="todocontainer">

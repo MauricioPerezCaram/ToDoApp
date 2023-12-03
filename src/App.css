@@ -126,3 +126,12 @@ body {
   width: 25%;
   margin: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .todocontainer {
+    width: 90%;
+  }
+  .todo {
+    width: 20px;
+  }
+}

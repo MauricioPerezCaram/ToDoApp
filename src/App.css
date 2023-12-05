@@ -131,7 +131,26 @@ body {
   .todocontainer {
     width: 90%;
   }
-  .todo {
-    width: 20px;
+
+  .todoInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Centrar en la pantalla */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .todoTitle {
+    margin-bottom: 8px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .button,
+  .buttonEliminar {
+    width: 100%;
+    margin-bottom: 4px; /* Reducir el espacio entre los botones */
   }
 }
